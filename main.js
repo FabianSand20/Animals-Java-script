@@ -4,7 +4,7 @@ const galleryItems = document.querySelectorAll('.image-item');
 filterButtons.forEach(button => {
   button.addEventListener('click', () => {
     const filter = button.dataset.filter;
-    
+
     galleryItems.forEach(item => {
       if (item.classList.contains(filter) || filter === 'all') {
         item.style.display = 'block';
@@ -15,41 +15,53 @@ filterButtons.forEach(button => {
   });
 });
 
-function mostrarPopup(nombre, imagen, descripcion) {
-  document.getElementById("miPopup").style.display = "block";
-  document.getElementById("animalNombre").innerHTML = nombre;
-  document.getElementById("animalImagen").src = imagen;
-  document.getElementById("animalDescripcion").innerHTML = descripcion;
-}
-function cerrarPopup() {
-  document.getElementById("miPopup").style.display = "none";
+
+
+  var cont = 0;
+function info(animal) {
+
+  var comparador = [];
+  if (cont === 0) {
+    comparador = animalitos.find(e => e.comun === animal);
+
+
+    document.getElementById('miPopup').innerHTML = `
+    <img src="${comparador.imagen}"
+    <h1>Nombre Comun: ${comparador.comun} </h2>
+    <h2>Nombre Cientifico: ${comparador.cientifico}</h3>
+     <p>Tipo de Animal: ${comparador.tipoAnimal}</p>
+     <p>Habitat: ${comparador.habitat}</p>
+     <p>Reproduccion: ${comparador.reproduccion}</p>
+     <p>Dieta: ${comparador.diet}</p>
+     <p>Tipo de Sangre: ${comparador.blood}</p>
+     `
+    document.getElementById("miPopup").style.display = "flex";
+    cont = 1;
+  } else {
+    document.getElementById('miPopup').innerHTML = ``
+    comparador = [];
+    cont = 0
+    document.getElementById("miPopup").style.display = "none";
+  }
+
+
+
 }
 
-function info(animal) {
-  document.querySelector('.miPopup').innerHTML = `
-  <img src="${animal.imagen}"
-  <h1>Nombre Comun: ${animal.Comun} </h2>
-  <h2>Nombre Cientifico: ${animal.Cientifico}</h3>
-  <p>Tipo de Animal: ${animal.tipoAnimal}</p>
-  <p>Habitat: ${animal.habitat}</p>
-  <p>Reproduccion: ${animal.reproduccion}</p>
-  <p>Dieta: ${animal.diet}</p>
-  <p>Tipo de Sangre: ${animal.blood}</p>
-`
-}
 
 class Animal {
 
   constructor(comun, cientifico, tipoAnimal, habitat, reproduccion, dieta, sangre, imagen) {
     this.comun = comun
     this.cientifico = cientifico
-    this.tipoAnimal= tipoAnimal
+    this.tipoAnimal = tipoAnimal
     this.habitat = habitat
     this.reproduccion = reproduccion
     this.diet = dieta
     this.blood = sangre
     this.imagen = imagen
-  } }
+  }
+}
 
 class Mammals extends Animal {
   constructor(
@@ -72,7 +84,8 @@ class Mammals extends Animal {
       sangre,
       imagen,
     )
-}}
+  }
+}
 
 class Reptiles extends Animal {
   constructor(
@@ -85,17 +98,18 @@ class Reptiles extends Animal {
     sangre,
     imagen,
   ) {
-  super(
-    comun,
-    cientifico,
-    tipoAnimal,
-    habitat,
-    reproduccion,
-    dieta,
-    sangre,
-    imagen,
-)
-}}
+    super(
+      comun,
+      cientifico,
+      tipoAnimal,
+      habitat,
+      reproduccion,
+      dieta,
+      sangre,
+      imagen,
+    )
+  }
+}
 
 class fish extends Animal {
   constructor(
@@ -108,7 +122,21 @@ class fish extends Animal {
     sangre,
     imagen,
   ) {
-  super(
+    super(
+      comun,
+      cientifico,
+      tipoAnimal,
+      habitat,
+      reproduccion,
+      dieta,
+      sangre,
+      imagen,
+    )
+  }
+}
+
+class birds extends Animal {
+  constructor(
     comun,
     cientifico,
     tipoAnimal,
@@ -117,31 +145,19 @@ class fish extends Animal {
     dieta,
     sangre,
     imagen,
-)
-}}
-
-class birds extends Animal {
-  constructor(
-  comun,
-  cientifico,
-  tipoAnimal,
-  habitat,
-  reproduccion,
-  dieta,
-  sangre,
-  imagen,
-) {
-  super(
-  comun,
-  cientifico,
-  tipoAnimal,
-  habitat,
-  reproduccion,
-  dieta,
-  sangre,
-  imagen,
-  )
-}}
+  ) {
+    super(
+      comun,
+      cientifico,
+      tipoAnimal,
+      habitat,
+      reproduccion,
+      dieta,
+      sangre,
+      imagen,
+    )
+  }
+}
 
 class amphibians extends Animal {
   constructor(
@@ -154,17 +170,18 @@ class amphibians extends Animal {
     sangre,
     imagen,
   ) {
-  super(
-    comun,
-    cientifico,
-    tipoAnimal,
-    habitat,
-    reproduccion,
-    dieta,
-    sangre,
-    imagen,
-)
-}}
+    super(
+      comun,
+      cientifico,
+      tipoAnimal,
+      habitat,
+      reproduccion,
+      dieta,
+      sangre,
+      imagen,
+    )
+  }
+}
 
 class vertebrates extends Animal {
   constructor(
@@ -176,18 +193,19 @@ class vertebrates extends Animal {
     dieta,
     sangre,
     imagen,
-) {
+  ) {
     super(
-    comun,
-    cientifico,
-    tipoAnimal,
-    habitat,
-    reproduccion,
-    dieta,
-    sangre,
-    imagen,
-)
-}}
+      comun,
+      cientifico,
+      tipoAnimal,
+      habitat,
+      reproduccion,
+      dieta,
+      sangre,
+      imagen,
+    )
+  }
+}
 
 class invertebrates extends Animal {
   constructor(
@@ -199,18 +217,19 @@ class invertebrates extends Animal {
     dieta,
     sangre,
     imagen,
-    ) {
+  ) {
     super(
-    comun,
-    cientifico,
-    tipoAnimal,
-    habitat,
-    reproduccion,
-    dieta,
-    sangre,
-    imagen,
+      comun,
+      cientifico,
+      tipoAnimal,
+      habitat,
+      reproduccion,
+      dieta,
+      sangre,
+      imagen,
     )
-}}
+  }
+}
 
 var animalitos = [
   new Mammals(
@@ -277,8 +296,8 @@ var animalitos = [
     'Pez Betta',
     'Betta splendens',
     'Pez',
-    'es una especie de pez de agua dulce',
-    'Ovíparo',
+    'es una especie de pez enorme de ríos densos deficientes de oxígeno',
+    'Carnivoro',
     'Omnivoro',
     'Fria',
     'img/pez01.jpg'
@@ -291,17 +310,17 @@ var animalitos = [
     'Ovíparo',
     'Carnivoro',
     'Fria',
-    'img/pez02.jpg'
+    'img/pez02.webp'
   ),
   new fish(
-    'Pez Betta',
-    'Betta splendens',
-    'Perciformes',
+    'Arapaima',
+    'Arapaima gigas',
+    'Pez',
     'es una especie de pez de agua dulce',
     'Ovíparo',
     'Omnivoro',
     'Fria',
-    'img/pez01.jpg'
+    'img/Arapaima.jpg'
   ),
   new birds(
     'Tucan',
@@ -341,7 +360,7 @@ var animalitos = [
     'Ovovivíparas',
     'Carnivoro',
     'Fria',
-    'img/salamandra01.jpg'
+    'img/salamandra01.jpeg'
   ),
   new amphibians(
     'Rana verde',
@@ -364,4 +383,3 @@ var animalitos = [
     'img/guajolote01.jpg'
   ),
 ]
-
