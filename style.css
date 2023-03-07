@@ -1,0 +1,30 @@
+.filter-buttons {
+  margin-bottom: 20px;
+}
+
+.filter-button {
+  padding: 8px 16px;
+  font-size: 17.3px;
+  background-color: #001401;
+  color: white;
+  border: none;
+  cursor: pointer;
+
+}
+
+.filter-button:not(:last-child) {
+  margin-right: 10px;
+}
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-item {
+  margin-bottom: 20px;
+}
+
+.image-item img {
+  width: 100%;
+}
