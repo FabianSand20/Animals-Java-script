@@ -1,70 +1,99 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Galería dinámica con filtros</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-  <div class="filter-buttons">
-    <button class="filter-button" data-filter="all" value="all">Todos</button>
-    <button class="filter-button" data-filter="nature" value="mammals">Mamiferos</button>
-    <button class="filter-button" data-filter="animals" value="reptiles">Reptiles</button>
-    <button class="filter-button" data-filter="food" value="fish">Peces</button>
-    <button class="filter-button" data-filter="city" value="birds">Aves</button>
-    <button class="filter-button" data-filter="Anfibios" value="amphibians">Anfibios</button>
-    <button class="filter-button" data-filter="Vertebrados" value="vertebrates">Vertebrados</button>
-    <button class="filter-button" data-filter="Invertebrados" value="invertebrates">Invertebrados</button>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galería dinámica con filtros</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="filter-buttons">
+      <button class="filter-button" data-filter="all" value="all">Todos</button>
+      <button class="filter-button" data-filter="nature" value="mammals">
+        Mamiferos
+      </button>
+      <button class="filter-button" data-filter="animals" value="reptiles">
+        Reptiles
+      </button>
+      <button class="filter-button" data-filter="food" value="fish">
+        Peces
+      </button>
+      <button class="filter-button" data-filter="city" value="birds">
+        Aves
+      </button>
+      <button class="filter-button" data-filter="Anfibios" value="amphibians">
+        Anfibios
+      </button>
+      <button
+        class="filter-button"
+        data-filter="Vertebrados"
+        value="vertebrates"
+      >
+        Vertebrados
+      </button>
+      <button
+        class="filter-button"
+        data-filter="Invertebrados"
+        value="invertebrates"
+      >
+        Invertebrados
+      </button>
+    </div>
 
-  <div class="image-gallery">
-    <div class="image-item nature">
-      <img src="img/Jaguar1.webp" height="300px">
+    <div class="image-gallery">
+      <div class="image-item nature">
+        <img src="img/Jaguar1.webp" height="300px" onclick="info('Jaguar') " />
+      </div>
+      <div class="image-item animals" onclick="info('Camaleon')">
+        <img src="img/camaleon1.jpg" height="300px" />
+      </div>
+      <div class="image-item Anfibios" onclick="info('Salamandra')">
+        <img src="img/salamandra01.jpeg" height="300px" />
+      </div>
+      <div class="image-item food" onclick="info('Pez Betta')">
+        <img src="img/pez01.jpg" height="300px" />
+      </div>
+      <div class="image-item city" onclick="info('Tucan')">
+        <img src="img/tucan1.jpg" height="300px" />
+      </div>
+      <div class="image-item Anfibios" onclick="info('Rana verde')">
+        <img src="img/rana01.jpg" height="300px" />
+      </div>
+      <div class="image-item nature" onclick="info('Oso pardo')">
+        <img src="img/oso01.jpg" height="300px" />
+      </div>
+      <div class="image-item animals" onclick="info('Serpiente Loro')">
+        <img src="img/serpe02.jpg" height="300px" />
+      </div>
+      <div class="image-item food" onclick="info('Pez Leon')">
+        <img src="img/pez02.webp" height="300px" />
+      </div>
+      <div class="image-item city" onclick="info('Guacamaya')">
+        <img src="img/Guaca2.jpg" height="300px" />
+      </div>
+      <div class="image-item Anfibios" onclick="info('Ajolote')">
+        <img src="img/guajolote01.jpg" height="300px" />
+      </div>
+      <div class="image-item nature" onclick="info('Jirafa')">
+        <img src="img/Jirafa01.jpg" height="300px" />
+      </div>
+      <div class="image-item animals" onclick="info('Cocodrilo')">
+        <img src="img/cocodrilo01.jpg" height="300px" />
+      </div>
+      <div class="image-item food" onclick="info('Arapaima')">
+        <img src="img/Arapaima.jpg" height="300px" />
+      </div>
+      <div class="image-item city" onclick="info('Quetzal')">
+        <img src="img/Quezal01.jpg" height="300px" />
+      </div>
     </div>
-    <div class="image-item animals">
-      <img src="img/camaleon1.jpg" height="300px">
+    <div class="contenedor"  onclick="info()" id="miPopup">
+
+
+
     </div>
-    <div class="image-item Anfibios">
-      <img src="img/salamandra01.jpeg" height="300px">
-    </div>
-    <div class="image-item food">
-      <img src="img/pez01.jpg" height="300px">
-    </div>
-    <div class="image-item city">
-      <img src="img/tucan1.jpg" height="300px">
-    </div>
-    <div class="image-item Anfibios">
-      <img src="img/rana01.jpg" height="300px">
-    </div>
-    <div class="image-item nature">
-      <img src="img/oso01.jpg" height="300px">
-    </div>
-    <div class="image-item animals">
-      <img src="img/serpe02.jpg" height="300px">
-    </div>
-    <div class="image-item food">
-      <img src="img/pez02.webp" height="300px">
-    </div>
-    <div class="image-item city">
-      <img src="img/Guaca2.jpg" height="300px">
-    </div>
-    <div class="image-item Anfibios">
-      <img src="img/guajolote01.jpg" height="300px">
-    </div>
-    <div class="image-item nature">
-      <img src="img/Jirafa01.jpg" height="300px">
-    </div>
-    <div class="image-item animals">
-      <img src="img/cocodrilo01.jpg" height="300px">
-    </div>
-    <div class="image-item food">
-      <img src="img/pez04.jpg" height="300px">
-    </div>
-    <div class="image-item city">
-      <img src="img/Quezal01.jpg" height="300px">
-    </div>
-  </div>
-  <div id="miPopup" style="display:none">
-  </div>
-  <script src="main.js"></script>
-</body>
+
+    <script src="main.js"></script>
+  </body>
 </html>

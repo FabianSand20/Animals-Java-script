@@ -9,7 +9,6 @@
   color: white;
   border: none;
   cursor: pointer;
-
 }
 
 .filter-button:not(:last-child) {
@@ -27,4 +26,23 @@
 
 .image-item img {
   width: 100%;
+}
+
+.contenedor {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  width: 60rem;
+   top: 2rem;
+  left: 7rem;
+  bottom: 2rem;
+  right: 2rem;
+  display: none;
+  padding: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contenedor img {
+  width: 600px;
+  height: auto;
 }
